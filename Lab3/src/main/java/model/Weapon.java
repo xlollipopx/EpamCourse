@@ -22,4 +22,8 @@ public abstract class Weapon {
     public int getCost() {
         return cost;
     }
+
+    public String toString() {
+        return weaponType + Integer.toString(cost);
+    }
 }

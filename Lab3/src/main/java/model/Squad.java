@@ -19,4 +19,13 @@ public class Squad {
     public List<Weapon> getArming() {
         return arming;
     }
+
+    public String toString() {
+        String result = "";
+        for(Weapon weapon: arming) {
+            result += weapon.toString();
+            result += '\n';
+        }
+        return result;
+    }
 }

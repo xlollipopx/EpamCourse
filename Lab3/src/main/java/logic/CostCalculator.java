@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CostCalculator {
 
-    static int calculate(Squad squad) {
+   public int calculate(Squad squad) {
         List<Weapon> arming= new LinkedList<Weapon>(squad.getArming());
         int resultCost = 0;
         for(Weapon weapon: arming) {
