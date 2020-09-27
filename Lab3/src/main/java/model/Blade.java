@@ -19,6 +19,6 @@ public class Blade extends Weapon{
     }
 
     public String toString() {
-        return super.toString() + Integer.toString(length);
+        return super.toString() + " " +  Integer.toString(length);
     }
 }

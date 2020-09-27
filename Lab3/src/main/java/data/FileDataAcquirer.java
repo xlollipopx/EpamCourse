@@ -9,18 +9,16 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FileDataAcquirer {
-    private final String FILE_NAME = "C:\\Users\\USER\\Documents\\GitHub\\EPAM_JAVA\\Lab3\\src\\main\\java\\data\\resources\\input.txt";
+public class FileDataAcquirer implements DataAcquirer{
 
-    public List<Weapon> read() {
+    public List<Weapon> readWeaponList(String fileName) {
         List<Weapon> weapons = new LinkedList<Weapon>();
         BufferedReader bufferedReader = null;
 
         try {
-            bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
+            bufferedReader = new BufferedReader(new FileReader(fileName));
             String line = "";
             while((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
                 weapons.add(StringToWeaponParser.parse(line));
             }
         } catch (FileNotFoundException e) {
@@ -35,5 +33,28 @@ public class FileDataAcquirer {
             }
         }
         return weapons;
+    }
+
+    public String read(String fileName) {
+        BufferedReader bufferedReader = null;
+        String result = "";
+        try {
+            bufferedReader = new BufferedReader(new FileReader(fileName));
+            String line = "";
+            while((line = bufferedReader.readLine()) != null) {
+                result+= line;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
     }
 }

@@ -24,6 +24,6 @@ public abstract class Weapon {
     }
 
     public String toString() {
-        return weaponType + Integer.toString(cost);
+        return weaponType + " " + " " + Integer.toString(cost);
     }
 }

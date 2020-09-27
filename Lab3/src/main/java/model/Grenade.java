@@ -19,6 +19,6 @@ public class Grenade extends Weapon{
     }
 
     public String toString() {
-        return super.toString() + Integer.toString(power);
+        return super.toString() + " " + Integer.toString(power);
     }
 }

@@ -19,6 +19,6 @@ public class MachineGun extends Weapon {
     }
 
     public String toString() {
-        return super.toString() + Integer.toString(calibre);
+        return super.toString() + " " + Integer.toString(calibre);
     }
 }

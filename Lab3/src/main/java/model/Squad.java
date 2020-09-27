@@ -26,6 +26,7 @@ public class Squad {
             result += weapon.toString();
             result += '\n';
         }
+        result = result.substring(0, result.length() - 1);
         return result;
     }
 }
