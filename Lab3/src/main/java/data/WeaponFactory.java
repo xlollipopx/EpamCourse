@@ -15,5 +15,4 @@ public class WeaponFactory {
             default: return null;
         }
     }
-
 }

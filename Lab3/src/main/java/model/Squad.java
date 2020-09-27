@@ -6,6 +6,8 @@ import java.util.List;
 public class Squad {
     private List<Weapon> arming = new LinkedList<Weapon>();
 
+    public Squad() {}
+
     public Squad(List<Weapon> arming) {
         this.arming.addAll(arming);
     }
