@@ -18,6 +18,7 @@ public class Blade extends Weapon{
         return length;
     }
 
+    @Override
     public String toString() {
         return super.toString() + " " +  Integer.toString(length);
     }

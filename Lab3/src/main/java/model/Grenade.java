@@ -18,6 +18,7 @@ public class Grenade extends Weapon{
         return power;
     }
 
+    @Override
     public String toString() {
         return super.toString() + " " + Integer.toString(power);
     }

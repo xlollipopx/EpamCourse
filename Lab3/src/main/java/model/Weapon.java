@@ -23,6 +23,7 @@ public abstract class Weapon {
         return cost;
     }
 
+    @Override
     public String toString() {
         return weaponType + " " + " " + Integer.toString(cost);
     }

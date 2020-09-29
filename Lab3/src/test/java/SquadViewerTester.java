@@ -16,7 +16,7 @@ public class SquadViewerTester {
     private final String FILE2 = "C:\\Users\\USER\\Documents\\GitHub\\EPAM_JAVA\\Lab3\\src\\test\\java\\resources\\input2.txt";
     private final String FILE3 = "C:\\Users\\USER\\Documents\\GitHub\\EPAM_JAVA\\Lab3\\src\\test\\java\\resources\\input3.txt";
     @Test
-    public void testSquadViewer() {
+    public void testSquadViewerShouldView() {
         //given
         List<Weapon> weapons = new LinkedList<Weapon>();
         weapons.add(new Blade("BLADE", 10, 60));
@@ -28,7 +28,7 @@ public class SquadViewerTester {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testInvalidData() {
+    public void testInvalidDataShouldThrowException() {
 
         Squad squad = new Squad(fileDataAcquirer.readWeaponList(FILE3));
 
