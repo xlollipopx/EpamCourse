@@ -9,6 +9,7 @@ public class Main {
         FileDataAcquirer fileDataAcquirer = new FileDataAcquirer();
         SquadCreator squadCreator = new SquadCreator();
         Squad squad = squadCreator.create(fileDataAcquirer.readWeaponList(FILE_NAME));
+
         SquadCharacteristicsViewer squadCharacteristicsViewer = new SquadCharacteristicsViewer();
         squadCharacteristicsViewer.view(squad);
         squadCharacteristicsViewer.viewArmingCost(squad);
