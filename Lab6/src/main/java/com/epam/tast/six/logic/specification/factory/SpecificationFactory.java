@@ -6,7 +6,7 @@ import com.epam.tast.six.logic.specification.*;
 
 public class SpecificationFactory {
 
-    public Specification create(BookFieldType bookFieldType) {
+    public Specification create(BookFieldType bookFieldType) throws DataException {
         switch (bookFieldType){
             case AUTHOR_NAME:
                 return new AuthorNameSpecification();

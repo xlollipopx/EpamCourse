@@ -11,8 +11,14 @@ import java.util.*;
 
 public class BookDao implements Dao{
     private LinkedHashSet<Book> books = new LinkedHashSet<>();
+    private SpecificationFactory specificationFactory = new SpecificationFactory();
+    private ComparatorFactory comparatorFactory = new ComparatorFactory();
 
-    public void addBook(Book book)  {
+    public int getSize() {
+        return books.size();
+    }
+
+    public void addBook(Book book) throws DataException {
        if(!books.contains(book)){
            books.add(book);
        }
@@ -21,7 +27,11 @@ public class BookDao implements Dao{
        }
     }
 
-    public void removeBook(Book book) {
+    public void addBook(List<Book> bookList) {
+        books.addAll(bookList);
+    }
+
+    public void removeBook(Book book) throws DataException {
         if(books.contains(book)) {
             books.remove(book);
         }
@@ -30,18 +40,20 @@ public class BookDao implements Dao{
         }
     }
 
-    public<T> List<Book> findByTeg(BookFieldType bookFieldType, T teg) {
-        SpecificationFactory factory = new SpecificationFactory();
-        Specification specification = factory.create(bookFieldType);
+    public<T> List<Book> findByTeg(BookFieldType bookFieldType, T teg) throws DataException {
+        Specification specification = specificationFactory.create(bookFieldType);
         return specification.find(books, teg);
     }
 
-    public List<Book> sortByTeg(BookFieldType bookFieldType) {
-        ComparatorFactory factory = new ComparatorFactory();
-        Comparator<Book> comparator = factory.create(bookFieldType);
+    public List<Book> sortByTeg(BookFieldType bookFieldType) throws DataException {
+        Comparator<Book> comparator = comparatorFactory.create(bookFieldType);
         List<Book> sortedList = new LinkedList<>(books);
         Collections.sort(sortedList, comparator);
         return sortedList;
+    }
+
+    public String toString() {
+        return books.toString();
     }
 
 }

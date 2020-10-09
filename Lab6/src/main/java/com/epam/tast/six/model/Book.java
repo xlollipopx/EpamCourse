@@ -2,7 +2,7 @@ package com.epam.tast.six.model;
 
 import java.util.Objects;
 
-public class Book implements Comparable{
+public class Book implements Comparable<Book>{
     private String bookName;
     private String authorName;
     private int publicationYear;
@@ -31,8 +31,8 @@ public class Book implements Comparable{
         return cost;
     }
 
-    public int compareTo(Object o) {
-        Book book = (Book)o;
+    public int compareTo(Book book) {
+
         if(this.authorName.equals(book.authorName) && this.bookName.equals(book.bookName) &&
         this.cost == book.cost && this.publicationYear == book.publicationYear) {
             return 0;
@@ -71,5 +71,6 @@ public class Book implements Comparable{
     public int hashCode() {
         return Objects.hash(bookName, authorName, publicationYear, cost);
     }
+
 }
 

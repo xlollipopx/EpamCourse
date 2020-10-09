@@ -12,7 +12,7 @@ import java.util.Comparator;
 
 public class ComparatorFactory {
 
-   public Comparator<Book> create(BookFieldType bookFieldType) {
+   public Comparator<Book> create(BookFieldType bookFieldType) throws DataException {
         switch (bookFieldType) {
             case BOOK_NAME:
                 return new BookNameComparator();

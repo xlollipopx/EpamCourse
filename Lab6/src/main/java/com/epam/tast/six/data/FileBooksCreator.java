@@ -21,7 +21,6 @@ public class FileBooksCreator implements BooksCreator{
         String result = "";
         BookParser bookParser = new BookParser();
         List<Book> bookList = new LinkedList<>();
-        StringBuilder stringBuilder = new StringBuilder();
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))){
             String line;
             while((line = bufferedReader.readLine()) != null) {
