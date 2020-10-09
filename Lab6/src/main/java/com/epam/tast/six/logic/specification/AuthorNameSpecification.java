@@ -1,4 +1,4 @@
-package com.epam.tast.six.specification;
+package com.epam.tast.six.logic.specification;
 
 import com.epam.tast.six.model.Book;
 

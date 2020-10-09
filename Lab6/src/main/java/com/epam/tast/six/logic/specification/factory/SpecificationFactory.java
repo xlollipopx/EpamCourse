@@ -1,8 +1,8 @@
-package com.epam.tast.six.specification.factory;
+package com.epam.tast.six.logic.specification.factory;
 
 import com.epam.tast.six.data.BookFieldType;
 import com.epam.tast.six.exception.DataException;
-import com.epam.tast.six.specification.*;
+import com.epam.tast.six.logic.specification.*;
 
 public class SpecificationFactory {
 

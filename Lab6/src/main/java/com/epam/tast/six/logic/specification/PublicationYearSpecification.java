@@ -1,4 +1,4 @@
-package com.epam.tast.six.specification;
+package com.epam.tast.six.logic.specification;
 
 import com.epam.tast.six.model.Book;
 
@@ -8,7 +8,7 @@ public class PublicationYearSpecification extends Specification{
 
     @Override
     protected <T> void addBook(Book book, T field, List<Book> bookList) {
-        if (book.getPublicationYear() == (int) field) {
+        if (book.getPublicationYear() == (Integer) field) {
             bookList.add(book);
         }
     }
