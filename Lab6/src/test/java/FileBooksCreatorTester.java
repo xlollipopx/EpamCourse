@@ -8,7 +8,6 @@ import org.junit.Test;
 import java.util.List;
 
 public class FileBooksCreatorTester {
-
     private static final String TEST_FILE_ONE = "src/test/java/resources/inputOne.txt";
     private static final String TEST_FILE_TWO = "src/test/java/resources/inputTwo.txt";
 

@@ -6,7 +6,6 @@ import com.epam.tast.six.logic.comparator.factory.ComparatorFactory;
 import com.epam.tast.six.model.Book;
 import com.epam.tast.six.logic.specification.Specification;
 import com.epam.tast.six.logic.specification.factory.SpecificationFactory;
-
 import java.util.*;
 
 public class BookDao implements Dao{

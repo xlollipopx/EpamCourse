@@ -5,7 +5,6 @@ import com.epam.tast.six.data.FileBooksCreator;
 import com.epam.tast.six.exception.DataException;
 import com.epam.tast.six.model.Book;
 import org.apache.log4j.Logger;
-
 import java.util.List;
 
 public class Main {

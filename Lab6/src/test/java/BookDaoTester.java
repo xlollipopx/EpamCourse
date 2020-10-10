@@ -9,11 +9,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class BookDaoTester {
-
-
     private Book bookOne = new Book("Sun", "Bob", 1890, 15);
     private Book bookTwo = new Book("Worm", "Ann", 1990, 12);
     private Book bookThree = new Book("Sun", "Bob", 1490, 11);
+
     @Test
     public void TestAddMethod() throws DataException {
         //given

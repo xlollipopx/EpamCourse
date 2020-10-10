@@ -71,6 +71,5 @@ public class Book implements Comparable<Book>{
     public int hashCode() {
         return Objects.hash(bookName, authorName, publicationYear, cost);
     }
-
 }
 

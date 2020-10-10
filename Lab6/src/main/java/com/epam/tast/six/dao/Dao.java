@@ -11,4 +11,5 @@ public interface Dao {
     void addBook(Book book) throws DataException;
     void removeBook(Book book) throws DataException;
     <T> List<Book> findByTeg(BookFieldType bookFieldType, T teg) throws DataException;
+
 }

@@ -2,7 +2,6 @@ package com.epam.tast.six.data;
 
 import com.epam.tast.six.exception.DataException;
 import com.epam.tast.six.model.Book;
-
 import java.util.List;
 
 public interface BooksCreator {
