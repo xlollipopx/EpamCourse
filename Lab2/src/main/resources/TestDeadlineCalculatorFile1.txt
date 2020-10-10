@@ -1,2 +1,0 @@
-developer: Nick
-required time: 10
