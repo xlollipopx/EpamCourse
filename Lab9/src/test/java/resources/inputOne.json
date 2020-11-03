@@ -1,0 +1,18 @@
+{
+  "customers": [
+    {
+      "name": "Tom",
+      "order": [
+        "BURGER",
+        "TEA"
+      ]
+    },
+    {
+      "name": "Dom",
+      "order": [
+        "COFFEE",
+        "TEA"
+      ]
+    }
+  ]
+}
