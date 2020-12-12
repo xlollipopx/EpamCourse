@@ -1,0 +1,12 @@
+com\epam\web\logic\LoginCommand.class
+com\epam\web\controller\Servlet.class
+com\epam\web\logic\BeatService.class
+com\epam\web\logic\CatalogCommand.class
+com\epam\web\model\PagePath.class
+com\epam\web\model\Beat.class
+com\epam\web\logic\CommandFactory.class
+com\epam\web\model\Account.class
+com\epam\web\logic\HomeCommand.class
+com\epam\web\logic\Command.class
+com\epam\web\logic\LoginService.class
+com\epam\web\logic\SignInCommand.class
