@@ -13,7 +13,9 @@ public class BeatRowMapper implements RowMapper{
         String name = resultSet.getString("name");
         String timing = resultSet.getString("timing");
         String imagePath = resultSet.getString("image_path");
+        int accountId = resultSet.getInt("account_id");
+        int albumId = resultSet.getInt("albom_id");
 
-        return new Beat(beatId, name, timing, imagePath);
+        return new Beat(beatId, name, timing, imagePath, albumId, accountId);
     }
 }

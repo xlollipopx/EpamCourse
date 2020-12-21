@@ -11,10 +11,11 @@ import java.util.Properties;
 public class ConnectionFactory {
 
     public  Connection create() throws DaoException {
+        //TODO property file
         String url = "jdbc:mysql://localhost/mydb?useUnicode=true&serverTimezone=UTC";
         Properties properties = new Properties();
         properties.put("user","root");
-        properties.put("password","notna2001");
+        properties.put("password","anton");
         properties.put("autoReconnect","true");
         properties.put("characterEncoding","UTF-8");
         properties.put("useUnicode", true);

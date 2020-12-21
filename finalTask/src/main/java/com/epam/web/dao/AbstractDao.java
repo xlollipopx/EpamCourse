@@ -1,12 +1,11 @@
 package com.epam.web.dao;
 
 import com.epam.web.exception.DaoException;
+import com.epam.web.extractor.BeatFieldsExtractor;
+import com.epam.web.extractor.FieldsExtractor;
 import com.epam.web.mapper.RowMapper;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -68,14 +67,26 @@ public abstract class AbstractDao<T> implements Dao<T>{
     }
 
     @Override
-    public void save(T item) {
-
+    public boolean save(T item) {
+        boolean result;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(getSaveQuery());
+            extract(item, preparedStatement);
+            result = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException sql) {
+            return false;
+        }
+        return result;
     }
 
     @Override
     public void removeById(Long id) {
 
     }
+
+    protected abstract void extract(T item, PreparedStatement preparedStatement);
+
+    protected abstract String getSaveQuery();
 
     protected abstract String getTableName();
 }

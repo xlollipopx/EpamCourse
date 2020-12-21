@@ -13,20 +13,12 @@
    	<link rel="stylesheet" type="text/css" href="static/css/position.css">
    	<link rel="stylesheet" type="text/css" href="static/css/catalog.css">
    	<link rel="stylesheet" type="text/css" href="static/css/side-menu.css">
+   	<link rel="stylesheet" type="text/css" href="static/css/button.css">
+   	<link rel="stylesheet" type="text/css" href="static/css/add-form.css">
     </head>
     <body>
-          <jsp:include page="header.jsp"/>
-
-<div class="parent">
-<div class="category-wrap">
-  <ul>
-    <li><a href="">Новинки</a></li>
-    <li><a href="">Альбомы</a></li>
-    <form name="FormThree" method="POST" action="${pageContext.request.contextPath}/controller?command=view-beats">
-    <li><a href="javascript:document.FormThree.submit()">Каталог битов</a></li>
-    </form>
-  </ul>
-</div>
+          <jsp:include page="authorized-header.jsp"/>
+          <jsp:include page="authorized-side-menu.jsp"/>
 
 <c:forEach var="beat"  items="${beatList}">
 
@@ -39,7 +31,6 @@
 </c:forEach>
 </div>
 
-
   <%--For displaying Page numbers.
     The when condition does not display a link for the current page--%>
     <table border="1" cellpadding="5" >
@@ -50,7 +41,9 @@
                         <td>${i}</td>
                     </c:when>
                     <c:otherwise>
-                        <td><a href="${pageContext.request.contextPath}/controller?command=view-beats&page=${i}">${i}</a></td>
+
+                        <td><a href="${pageContext.request.contextPath}/controller?command=view-beats-to-admin&page=${i}">${i}</a></td>
+
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
@@ -58,7 +51,42 @@
     </table>
 
 
-     <div id="footer" align="center">Best Beats</div>
+ <form method="POST" action="${pageContext.request.contextPath}/controller?command=add-beat">
+<input type="submit" value="add beat" class="add-button"/>
+</form>
+
+
+
+<button class="open-button" onclick="openForm()">Add beat</button>
+
+<div class="form-popup" id="myForm">
+  <form method = "POST" action="${pageContext.request.contextPath}/controller?command=add-beat" class="form-container">
+
+    <label for="text"><b>Name</b></label>
+    <input type="text"  name="beatName" required>
+
+    <label for="text"><b>timing</b></label>
+    <input type="text"  name="beatTiming" required>
+
+    <label for="text"><b>image path</b></label>
+    <input type="text"  name="imagePath" required>
+
+    <button type="submit" class="btn">Add</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
 
 
     </body>

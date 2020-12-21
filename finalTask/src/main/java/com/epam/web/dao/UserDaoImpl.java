@@ -5,6 +5,7 @@ import com.epam.web.mapper.UserRowMapper;
 import com.epam.web.model.Account;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,13 +34,23 @@ public class UserDaoImpl extends AbstractDao<Account> implements UserDao {
     }
 
     @Override
-    public void save(Account item) {
-
+    public boolean save(Account item) {
+        return save(item);
     }
 
     @Override
     public void removeById(Long id) {
 
+    }
+
+    @Override
+    protected void extract(Account item, PreparedStatement preparedStatement) {
+
+    }
+
+    @Override
+    protected String getSaveQuery() {
+        return null;
     }
 
     @Override

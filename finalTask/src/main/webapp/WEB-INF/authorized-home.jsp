@@ -3,6 +3,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
 
+<%@
+         page language = "java"
+         import = "com.epam.web.model.Account"
+         session = "true"
+%>
+<% Account account = (Account)session.getAttribute("account"); %>
+
 <fmt:setLocale value="${param.lang}" />
 <fmt:setBundle basename="messages"/>
 
@@ -14,10 +21,8 @@
    	<link rel="stylesheet" type="text/css" href="static/css/side-menu.css">
     </head>
     <body>
-
-          <jsp:include page="WEB-INF/header.jsp"/>
-          <jsp:include page="WEB-INF/side-menu.jsp"/>
-
+          <jsp:include page="authorized-header.jsp"/>
+          <jsp:include page="authorized-side-menu.jsp"/>
 
      <div id="footer" align="center">Best Beats</div>
     </body>

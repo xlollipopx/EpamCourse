@@ -12,7 +12,15 @@ public class CommandFactory {
                 return new CatalogCommand();
             case "to-main":
                 return new HomeCommand();
+            case "view-beats-to-admin":
+              return new ViewAdminCatalogCommand();
+            case "view-beats-to-customer":
+                return new ViewCustomerCatalogCommand();
+            case "add-beat":
+                return new AddBeatCommand();
             default: throw new IllegalArgumentException();
         }
     }
+
+
 }

@@ -1,6 +1,8 @@
 package com.epam.web.dao;
 
 import com.epam.web.exception.DaoException;
+import com.epam.web.extractor.BeatFieldsExtractor;
+import com.epam.web.extractor.FieldsExtractor;
 import com.epam.web.mapper.BeatRowMapper;
 import com.epam.web.mapper.RowMapper;
 import com.epam.web.mapper.UserRowMapper;
@@ -14,7 +16,11 @@ import java.util.Optional;
 
 public class BeatDaoImpl extends AbstractDao<Beat> implements BeatDao {
 
+    BeatFieldsExtractor beatFieldsExtractor = new BeatFieldsExtractor();
     private static final String FIND_BY_NAME = "select from accounts where name = ?";
+    private static final String SAVE = "INSERT INTO beats (beat_id, name, timing," +
+            " image_path, albom_id, account_id) Values (?, ?, ?, ?, ?, ?)";
+
     public BeatDaoImpl(Connection connection) {
         super(connection);
     }
@@ -36,13 +42,23 @@ public class BeatDaoImpl extends AbstractDao<Beat> implements BeatDao {
                 new BeatRowMapper(), name);
     }
 
-    public void save(Account item) {
-
+    public boolean save(Beat item) {
+        return super.save(item);
     }
 
     @Override
     public void removeById(Long id) {
 
+    }
+
+    @Override
+    protected void extract(Beat item, PreparedStatement preparedStatement) {
+        beatFieldsExtractor.extract(item, preparedStatement);
+    }
+
+    @Override
+    protected String getSaveQuery() {
+        return SAVE;
     }
 
     @Override
