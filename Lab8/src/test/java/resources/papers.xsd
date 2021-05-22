@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.example.com/papers" xmlns:tns="http://www.example.com/papers" elementFormDefault="qualified">
+
+    <xsd:element name = "paper" type = "tns:Paper" abstract="true"/>
+    <xsd:element name = "magazine" type = "tns:magazine" substitutionGroup="tns:paper"/>
+    <xsd:element name = "science-magazine" type = "tns:science-magazine" substitutionGroup="tns:paper"/>
+    <xsd:element name = "newspaper" type = "tns:newspaper" substitutionGroup="tns:paper"/>
+
+    <xsd:element name="papers">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tns:paper" minOccurs="2" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name = "Paper">
+        <xsd:sequence>
+            <xsd:element name = "title" type = "xsd:string"/>
+            <xsd:element name = "monthly" type = "xsd:boolean"/>
+            <xsd:element name = "color" type = "xsd:string"/>
+            <xsd:element name = "pages-number" type = "xsd:unsignedInt"/>
+            <xsd:element name="type">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="MAGAZINE"/>
+                        <xsd:enumeration value="NEWSPAPER"/>
+                        <xsd:enumeration value="BOOKLET"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="id" type = "xsd:ID" use="required"/>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="magazine">
+        <xsd:complexContent>
+            <xsd:extension base="tns:Paper">
+                <xsd:sequence>
+                    <xsd:element name = "glossy" type = "xsd:boolean"/>
+                    <xsd:element name = "publishing-office" type = "xsd:string"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="science-magazine">
+        <xsd:complexContent>
+            <xsd:extension base="tns:magazine">
+                <xsd:sequence>
+                    <xsd:element name = "impact-factor" type = "xsd:unsignedInt"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="newspaper">
+        <xsd:complexContent>
+            <xsd:extension base="tns:Paper">
+                <xsd:sequence>
+                    <xsd:element name = "subscription-index" type = "xsd:int"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+
+
+</xsd:schema>

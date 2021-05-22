@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<papers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.example.com/papers"
+        xsi:schemaLocation="http://www.example.com/papers papers.xsd">
+    <magazine id = "ID-1" >
+        <title>Cosmopolitan</title>
+        <monthly>true</monthly>
+        <color>blue</color>
+        <pages-number>40</pages-number>
+        <type>MAGAZINE</type>
+        <glossy>true</glossy>
+        <publishing-office>Cosmo</publishing-office>
+
+    </magazine>
+
+    <science-magazine id = "ID-2">
+        <title>Cosmos</title>
+        <monthly>false</monthly>
+        <color>green</color>
+        <pages-number>50</pages-number>
+        <type>MAGAZINE</type>
+        <glossy>true</glossy>
+        <publishing-office>Cosmo</publishing-office>
+        <impact-factor>280</impact-factor>
+    </science-magazine>
+
+    <newspaper id ="ID-3">
+        <title>Daily Mail</title>
+        <monthly>true</monthly>
+        <color>blue</color>
+        <pages-number>30</pages-number>
+        <type>NEWSPAPER</type>
+        <subscription-index>1003</subscription-index>
+    </newspaper>
+
+    <magazine id = "ID-5" >
+        <title>Cosmopolitan</title>
+        <monthly>true</monthly>
+        <color>red</color>
+        <pages-number>100</pages-number>
+        <type>MAGAZINE</type>
+        <glossy>true</glossy>
+        <publishing-office>Cosmo</publishing-office>
+
+    </magazine>
+
+</papers>
