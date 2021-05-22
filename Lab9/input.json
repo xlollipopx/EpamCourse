@@ -1,0 +1,33 @@
+{
+  "customers": [
+    {
+      "name": "Tom",
+      "order": [
+        "BURGER",
+        "TEA"
+      ]
+    },
+    {
+      "name": "Dom",
+      "order": [
+        "COFFEE",
+        "TEA"
+      ]
+    },
+    {
+      "name": "Met",
+      "order": [
+        "POTATO",
+        "BURGER"
+      ]
+    },
+    {
+      "name": "Pol",
+      "order": [
+        "TEA",
+        "TEA"
+      ]
+    }
+
+  ]
+}
